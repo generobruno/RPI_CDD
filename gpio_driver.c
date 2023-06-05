@@ -53,9 +53,7 @@ static ssize_t driver_write(struct file *File, const char *user_buffer, size_t c
 	/* Copy data to user */
 	not_copied = copy_from_user(&value, user_buffer, to_copy);
 	
-	if(to_copy > 0) {
-	   value = user_buffer[0];
-	}
+	value = user_buffer[0];
 	
 	printk("Copying: %c", value);
 	
