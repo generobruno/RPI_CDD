@@ -1,0 +1,1 @@
+cmd_/home/bruno/Documents/Facultad/5to_anio/Sistemas_de_Computacion/TP5/RPI_CDD/built-in.a := rm -f /home/bruno/Documents/Facultad/5to_anio/Sistemas_de_Computacion/TP5/RPI_CDD/built-in.a; aarch64-linux-gnu-ar cDPrST /home/bruno/Documents/Facultad/5to_anio/Sistemas_de_Computacion/TP5/RPI_CDD/built-in.a 
