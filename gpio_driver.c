@@ -151,7 +151,7 @@ static int __init ModuleInit(void) {
 	}
 
 	/* Set GPIO Direction */
-	if(gpio_direction_output(17, 1)) {
+	if(gpio_direction_input(17)) {
 		printk("Cant set GPIO 17 to INPUT\n");
 		goto Gpio17Error;
 	}

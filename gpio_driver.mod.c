@@ -30,6 +30,7 @@ __used __section(__versions) = {
 	{ 0x96312b2b, "class_destroy" },
 	{ 0x5c5abd92, "device_destroy" },
 	{ 0xfe990052, "gpio_free" },
+	{ 0xe248e10a, "gpiod_direction_input" },
 	{ 0xe707bb9e, "gpiod_direction_output_raw" },
 	{ 0x47229b5c, "gpio_request" },
 	{ 0xb6916cd9, "cdev_add" },
@@ -51,4 +52,4 @@ __used __section(__versions) = {
 MODULE_INFO(depends, "");
 
 
-MODULE_INFO(srcversion, "2C5C34497E42FBFA3DC4BDE");
+MODULE_INFO(srcversion, "3E5406809BCEB35FD0BCB39");
