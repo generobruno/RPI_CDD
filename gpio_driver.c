@@ -57,7 +57,7 @@ static ssize_t driver_write(struct file *File, const char *user_buffer, size_t c
 	   value = user_buffer[0];
 	}
 	
-	printk("Copying: %c\n", value);
+	printk("Copying: %c", value);
 	
 	/* Setting the LED */
 	switch(value) {
