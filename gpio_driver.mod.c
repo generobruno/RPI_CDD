@@ -38,8 +38,8 @@ __used __section(__versions) = {
 	{ 0x3a30eeee, "device_create" },
 	{ 0x9437905c, "__class_create" },
 	{ 0xe3ec2f2b, "alloc_chrdev_region" },
-	{ 0xdcb764ad, "memset" },
 	{ 0x835d3bfb, "gpiod_set_raw_value" },
+	{ 0xdcb764ad, "memset" },
 	{ 0x12a4e128, "__arch_copy_from_user" },
 	{ 0xdecd0b29, "__stack_chk_fail" },
 	{ 0x6cbbfc54, "__arch_copy_to_user" },
@@ -52,4 +52,4 @@ __used __section(__versions) = {
 MODULE_INFO(depends, "");
 
 
-MODULE_INFO(srcversion, "6B4DCF7917DC4B97E934570");
+MODULE_INFO(srcversion, "DE8485F83DDFAEF4D40CF08");
