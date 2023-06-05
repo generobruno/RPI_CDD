@@ -160,8 +160,21 @@ static int __init ModuleInit(void) {
 		goto Gpio17Error;
 	}
 
-	return 0;
+	/* GPIO 17 init */
+	if(gpio_request(22, "rpi-gpio-22")) {
+		printk("Can't allocate GPIO 22\n");
+		goto Gpio17Error;
+	}
 
+	/* Set GPIO Direction */
+	if(gpio_direction_input(22)) {
+		printk("Cant set GPIO 22 to INPUT\n");
+		goto Gpio22Error;
+	}
+
+	return 0;
+Gpio22Error:
+	gpio_free(22);
 Gpio17Error:
 	gpio_free(17);
 Gpio4Error:
