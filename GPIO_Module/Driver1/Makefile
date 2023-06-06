@@ -1,7 +1,7 @@
 obj-m +=  gpio_driver.o
 
 # Kernel Sources
-KDIR := $(PWD)/linux
+KDIR := $(PWD)/../linux
 
 all:
 	make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- -C $(KDIR) M=$(PWD) modules

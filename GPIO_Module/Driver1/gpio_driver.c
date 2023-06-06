@@ -6,11 +6,11 @@
 #include <linux/gpio.h>
 
 #define DRIVER_NAME "GPIO_Driver"
-#define DRIVER_CLASS "MyDummyClass"
+#define DRIVER_CLASS "MyDriverClass"
 
 /* Meta Information */
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Bruno A. Genero");
+MODULE_AUTHOR("Pablo R. Picasso");
 MODULE_DESCRIPTION("GPIO Example DDC");
 
 /* Variables for device and device class */
@@ -160,21 +160,21 @@ static int __init ModuleInit(void) {
 		goto Gpio17Error;
 	}
 
-	/* GPIO 17 init */
-	if(gpio_request(22, "rpi-gpio-22")) {
-		printk("Can't allocate GPIO 22\n");
+	/* GPIO 21 init */
+	if(gpio_request(21, "rpi-gpio-21")) {
+		printk("Can't allocate GPIO 21\n");
 		goto Gpio17Error;
 	}
 
 	/* Set GPIO Direction */
-	if(gpio_direction_input(22)) {
-		printk("Cant set GPIO 22 to INPUT\n");
-		goto Gpio22Error;
+	if(gpio_direction_input(21)) {
+		printk("Cant set GPIO 21 to INPUT\n");
+		goto Gpio21Error;
 	}
 
 	return 0;
-Gpio22Error:
-	gpio_free(22);
+Gpio21Error:
+	gpio_free(21);
 Gpio17Error:
 	gpio_free(17);
 Gpio4Error:
@@ -191,6 +191,7 @@ ClassError:
 static void __exit ModuleExit(void) {
 	/* Free GPIO */
 	gpio_set_value(4, 0);
+	gpio_free(21);
 	gpio_free(17);
 	gpio_free(4);
 
