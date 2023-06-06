@@ -15,9 +15,9 @@ int main() {
 
 	while(1)
 	{
-		write(f, "22,1", 4);
+		write(f, "1", 2);
 		usleep(500000);
-		write(f, "22,0", 4);
+		write(f, "0", 2);
 		usleep(500000);
 	}
 
