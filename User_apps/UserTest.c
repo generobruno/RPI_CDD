@@ -51,7 +51,7 @@ int main() {
 	// Read logic level of GPIO pins and display them to the terminal
 	for (index = 0; index < NUM_GPIO_PINS; index++) {
 		if (read(fd[index], readBuf, 1) < 1) {
-			perror("write, set pin input");
+			perror("read, set pin input");
 			exit(EXIT_FAILURE);
 		}
 		readBuf[1] = '\0';
