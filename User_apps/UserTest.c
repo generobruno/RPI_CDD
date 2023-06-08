@@ -22,16 +22,16 @@ int main() {
 
 	// Open pin GPIO 17
 	snprintf(path, sizeof(path), "/dev/raspiGpio%d", pinIn1);
-	fd[index] = open(path, O_RDWR);
-	if (fd[index] < 0) {
+	fd[0] = open(path, O_RDWR);
+	if (fd[0] < 0) {
 		perror("Error opening GPIO pin");
 		exit(EXIT_FAILURE);
 	}
 
 	// Open pin GPIO 22
 	snprintf(path, sizeof(path), "/dev/raspiGpio%d", pinIn2);
-	fd[index] = open(path, O_RDWR);
-	if (fd[index] < 0) {
+	fd[1] = open(path, O_RDWR);
+	if (fd[1] < 0) {
 		perror("Error opening GPIO pin");
 		exit(EXIT_FAILURE);
 	}
@@ -41,7 +41,7 @@ int main() {
     strncpy(buf, "in", 2);
     buf[2] = '\0';
 
-    for (index = 0; index < NUM_GPIO_PINS-1; index++) {
+    for (index = 0; index < NUM_GPIO_PINS; index++) {
         if (write(fd[index], buf, sizeof(buf)) < 0) {
             perror("write, set pin input");
             exit(EXIT_FAILURE);
