@@ -49,19 +49,13 @@ int main() {
     }
 
 	// Read logic level of GPIO pins and display them to the terminal
-    index = 0;
-    for (i = 0; i < MAX_GPIO_NUMBER; i++) {
-        if (i != 0 && i != 1 && i != 5 && i != 6 &&
-            i != 12 && i != 13 && i != 16 && i != 19 &&
-            i != 20 && i != 21 && i != 26) {
-            if (read(fd[index], readBuf, 1) < 1) {
-                perror("write, set pin input");
-                exit(EXIT_FAILURE);
-            }
-            readBuf[1] = '\0';
-            printf("GPIO pin: %d Logic level: %s\n", i, readBuf);
-            index++;
-        }
+	for (index = 0; index < NUM_GPIO_PINS; index++) {
+		if (read(fd[index], readBuf, 1) < 1) {
+			perror("write, set pin input");
+			exit(EXIT_FAILURE);
+		}
+		readBuf[1] = '\0';
+		printf("GPIO pin: %d Logic level: %s\n", i, readBuf);
     }
 
 	return EXIT_SUCCESS;
