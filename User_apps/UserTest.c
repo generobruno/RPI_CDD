@@ -41,7 +41,7 @@ int main() {
     strncpy(buf, "in", 2);
     buf[2] = '\0';
 
-    for (index = 0; index < NUM_GPIO_PINS; index++) {
+    for (index = 0; index < NUM_GPIO_PINS-1; index++) {
         if (write(fd[index], buf, sizeof(buf)) < 0) {
             perror("write, set pin input");
             exit(EXIT_FAILURE);
@@ -49,7 +49,7 @@ int main() {
     }
 
 	// Read logic level of GPIO pins and display them to the terminal
-	for (index = 0; index < NUM_GPIO_PINS; index++) {
+	for (index = 0; index < NUM_GPIO_PINS-1; index++) {
 		if (read(fd[index], readBuf, 1) < 1) {
 			perror("read, set pin input");
 			exit(EXIT_FAILURE);
