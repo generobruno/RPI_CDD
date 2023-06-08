@@ -16,7 +16,7 @@
 /* Macros */
 #define DRIVER_NAME "GPIO_Driver"
 #define DRIVER_CLASS "MyDriverClass"
-#define NUM_GPIO_PINS 2
+#define NUM_GPIO_PINS 21
 #define MAX_GPIO_NUMBER 32
 #define DEVICE_NAME "raspi-gpio"
 #define BUF_SIZE 512
