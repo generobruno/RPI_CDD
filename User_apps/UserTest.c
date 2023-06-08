@@ -7,7 +7,6 @@
 #include <string.h>
 
 #define NUM_GPIO_PINS   2
-#define MAX_GPIO_NUMBER 32
 #define BUF_SIZE        3
 #define PATH_SIZE       20
 
