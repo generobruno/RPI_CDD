@@ -9,7 +9,7 @@ fig.tight_layout()
 
 def animate(i):
     # Read the values from device files for pin 17 and pin 22
-    with open('/dev/raspiGpio17', 'rb') as file17, open('/dev/raspiGpio22', 'rb') as file22:
+    with open('raspiGpio17', 'rb') as file17, open('raspiGpio22', 'rb') as file22:
         value17 = int.from_bytes(file17.read(1), byteorder='big')
         value22 = int.from_bytes(file22.read(1), byteorder='big')
 
