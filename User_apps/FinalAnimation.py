@@ -11,7 +11,7 @@ def animate(i):
         xs = list(range(1, len(ys) + 1))  # Generate x values
     ax1.clear()
     ax1.plot(xs, ys)
-    ax1.set_title(f"raspiGpio: {filename}")
+    ax1.set_title(f"/dev/raspiGpio: {filename}")
 
 def get_filename():
     gpio_number = input("Enter the GPIO pin number (or 'q' to quit): ")
